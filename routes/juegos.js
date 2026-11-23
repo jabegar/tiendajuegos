@@ -13,4 +13,8 @@ router.get('/', (req, res) => {
     res.render('juegos', { titulo: 'Juegos', juegos: arrayJuegos })
 })
 
+router.get('/baratos', (req, res) => {
+    res.render('juegos', { titulo: 'Juegos de menos de 30€', juegos: arrayJuegos.filter(j => j.precio < 30)})
+})
+
 module.exports = router

@@ -1,0 +1,26 @@
+<%- include('partials/cabecera') %>
+
+<% if (plataformas.length == 0) { %>
+ <p>No hay plataformas disponibles</p>
+<% } else { %>
+    <p>Hay un total de <%= plataformas.length %> plataformas</p>
+    <table class="table">
+    <thead class="table-dark">
+        <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fabricante</th>
+        <th scope="col">Año</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% plataformas.forEach(j => { %>
+            <tr>
+                <td><%= j.nombre %></td>
+                <td><%= j.fabricante %></td>
+                <td><%= j.anio %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<% } %>
+<%- include('partials/pie') %>
